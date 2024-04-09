@@ -172,7 +172,7 @@ def test_10_single_card_hands(h1, h2, expected_result):
 
 @pytest.mark.integration(min_level=3)
 @pytest.mark.parametrize(
-    "h1, h2",
+    "_h1, _h2",
     [
         (None, None),
         ("2S", None),
@@ -197,7 +197,7 @@ def test_invalid_None_inputs(_h1, _h2):
 
 @pytest.mark.integration(min_level=3)
 @pytest.mark.parametrize(
-    "h1, h2",
+    "_h1, _h2",
     [
         ("", ""),
         ("2C", ""),
@@ -222,7 +222,7 @@ def test_invalid_empty_inputs(_h1, _h2):
 
 @pytest.mark.integration(min_level=3)
 @pytest.mark.parametrize(
-    "h1, h2",
+    "_h1, _h2",
     [
         (1, 2),
         ("4S", 2),
