@@ -49,6 +49,7 @@ def test_score_poker_hands_is_a_function():
     """
     poker_scoring_api.score_poker_hands is a function
     """
+    #pylint:disable=no-member
     assert inspect.isfunction(
         poker_scoring_api.score_poker_hands
     ), "poker_scoring_api.score_poker_hands must be a function!"
