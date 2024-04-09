@@ -6,7 +6,8 @@ import pytest
 from _pytest.reports import TestReport
 from spoiler_alert_keep_out.level_documentation import (
     display_boss_email,
-    display_poker_rules,
+    display_my_rules,
+    GAME_NAME
 )
 from typing import Optional
 
@@ -54,7 +55,7 @@ def pytest_addoption(parser):
     parser.addoption(
         "--rules",
         action="store_true",
-        help="list Poker Rules as of the current level",
+        help=f"list {GAME_NAME} Rules as of the current level",
     )
     parser.addoption(
         "--submit",
@@ -105,8 +106,8 @@ def pytest_configure(config):
 
     show_rules = config.getoption("--rules")
     if show_rules:
-        display_poker_rules(level)
-        pytest.exit(f"(after displaying v{(level or 0)+1} Poker rules)")
+        display_my_rules(level)
+        pytest.exit(f"(after displaying v{(level or 0)+1} {GAME_NAME} rules)")
 
 
 def get_integration_status(item):
